@@ -25,14 +25,14 @@ const Home = () => {
       </View> */}
 
       <View style={styles.button}>
-        <Link style={styles.buttonText} href="/about">
-          <ThemedText>About Page</ThemedText>
+        <Link href="/login">
+          <ThemedText style={styles.buttonText}>Login Page</ThemedText>
         </Link>
       </View>
 
       <View style={styles.button}>
-        <Link style={styles.buttonText} href="/contact">
-          <ThemedText>Contact Page</ThemedText>
+        <Link href="/register">
+          <ThemedText style={styles.buttonText}>Register Page</ThemedText>
         </Link>
       </View>
     </ThemedView>
