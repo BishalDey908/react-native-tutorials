@@ -1,77 +1,57 @@
-import { StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
+import { StyleSheet } from 'react-native'
+import { Link } from 'expo-router'
 
-import { Link } from "expo-router";
-
-import Logo from "../assets/icon.png";
-import ThemedView from "../components/ThemedView";
-import ThemedLogo from "../components/ThemedLogo";
-import Spacer from "../components/Spacer";
-import ThemedText from "../components/ThemedText";
+import ThemedView from "../components/ThemedView"
+import ThemedText from "../components/ThemedText"
+import ThemedLogo from "../components/ThemedLogo"
+import Spacer from "../components/Spacer"
+import { Colors } from '../constants/Colors'
 
 const Home = () => {
   return (
     <ThemedView style={styles.container}>
-      <ThemedLogo style={styles.img} />
+      <ThemedLogo />
       <Spacer />
-      <ThemedText style={[styles.title, { color: "purple" }]} title={true}>
-        The Number 1
+
+      <ThemedText style={styles.title} title={true}>The Number 1</ThemedText>
+
+      <ThemedText style={{ marginTop: 10, marginBottom: 30 }}>
+        Reading List App
       </ThemedText>
-      <Spacer />
-      <ThemedText>Reading List App</ThemedText>
 
-      {/* <View style={styles.card}>
-        <Text>This is a card</Text>
-      </View> */}
+      <Link href="/login" style={styles.link}>
+        <ThemedText>Login</ThemedText>
+      </Link>
 
-      <View style={styles.button}>
-        <Link href="/login">
-          <ThemedText style={styles.buttonText}>Login Page</ThemedText>
-        </Link>
-      </View>
+      <Link href="/register" style={styles.link}>
+        <ThemedText>Register</ThemedText>
+      </Link>
 
-      <View style={styles.button}>
-        <Link href="/register">
-          <ThemedText style={styles.buttonText}>Register Page</ThemedText>
-        </Link>
-      </View>
+      <Link href="/profile" style={styles.link}>
+        <ThemedText>Profile</ThemedText>
+      </Link>
+
     </ThemedView>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  img: {
+    marginVertical: 20
   },
   title: {
-    fontWeight: "bold",
-    fontSize: 20,
+    fontWeight: 'bold',
+    fontSize: 18,
   },
-  // card:{
-  //   backgroundColor:"#eee",
-  //   padding:20,
-  //   borderRadius:5,
-  //   boxShadow:"0 2px 4px rgba(0,0,0,0.1)",
-  //   marginTop:20,
-  // },
-  img: {
-    height: 55,
-    width: 55,
-    marginVertical: 20,
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1
   },
-  button: {
-    marginTop: 50,
-    padding: 20,
-    fontSize: 25,
-    backgroundColor: "blue",
-    color: "white",
-    borderRadius: 50,
-  },
-  buttonText: {
-    color: "white",
-  },
-});
+})
