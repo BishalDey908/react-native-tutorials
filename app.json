@@ -21,6 +21,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "package":"dev.bishal.shelfie", 
       "edgeToEdgeEnabled": true
     },
     "web": {
